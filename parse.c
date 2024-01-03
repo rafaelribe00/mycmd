@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 typedef struct {
     int found;
     const char *operator;
@@ -25,7 +26,7 @@ comands parse(char *argv[], int argc) {
         if (strcmp(argv[i], ">") == 0 || strcmp(argv[i], "<") == 0 || strcmp(argv[i], "|") == 0) {
             found = 1;
             result.found = 1;
-	    result.operator =  argv[i];
+            result.operator =  argv[i];
             continue;
         }
 
@@ -45,4 +46,8 @@ comands parse(char *argv[], int argc) {
     if (found) result.argv_cmd2[result.argc_cmd2] = NULL;
 
     return result;
+}
+
+int main(char *argv[], int argc){
+    parse(argv, argc);
 }

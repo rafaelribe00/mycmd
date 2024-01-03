@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     FILE *file;
     char buffer[1024]; // Buffer to store data read from /proc/loadavg
     const char *file_path = "/proc/loadavg"; // Path to loadavg file
